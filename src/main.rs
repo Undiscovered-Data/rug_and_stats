@@ -2,17 +2,6 @@ use rug::Float;
 use statrs::statistics::Statistics;
 use std::io::Write;
 use std::fs::File;
-/*
-fn main() {
-    let anum = Float::with_val(60000, 258.0);
-    let sqroot = anum.sqrt();
-
-    for a in 2..=36 {
-        let the_string = sqroot.to_string_radix(a, None);
-        println!("Base {} *|* {}", a, the_string);
-    }
-}
-*/
 
 fn get_string(the_base: i32, root_it: i32) -> String {
     let anum = Float::with_val(60000, root_it);
