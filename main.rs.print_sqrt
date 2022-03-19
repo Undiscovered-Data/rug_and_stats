@@ -1,0 +1,24 @@
+use rug::Float;
+
+/*
+    This program assigns 256 bits to represent the number 258.0.
+    It takes the square root and prints out the result in bases
+    2 through 36 respectively. This reminds you that as the 
+    bases get bigger, the number of digits to represent a 256
+    byte number get smaller.
+
+    To run this rename it to main.rs and put it in the src
+    folder. Then comment out the statrs = "0.15" line in your 
+    toml file and then cargo run.
+*/
+
+fn main() {
+    let anum = Float::with_val(256, 258.0);
+    let sqroot = anum.sqrt();
+
+    for a in 2..=36 {
+        let the_string = sqroot.to_string_radix(a, None);
+        println!("Base {} *|* {}", a, the_string);
+    }
+}
+
